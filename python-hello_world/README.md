@@ -1,0 +1,1 @@
+In this project, we will learn about the bases of printing in Python !
