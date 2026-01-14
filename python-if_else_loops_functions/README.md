@@ -1,0 +1,1 @@
+In this section of the project, we will see the loops and the elif conditions
