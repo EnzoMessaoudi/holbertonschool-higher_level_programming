@@ -7,7 +7,4 @@
 
 
 class Square:
-    """
-    This create an empty class names square
-    """
     pass
