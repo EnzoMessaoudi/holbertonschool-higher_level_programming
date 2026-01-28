@@ -77,12 +77,3 @@ class Rectangle:
         for i in range(self._Rectangle__height):
             lines.append("#" * self._Rectangle__width)
         return "\n".join(lines)
-
-    def __repr__(self):
-        """
-        Print a rectangle with the view of a developper
-        """
-        return (
-            f"Rectangle({self._Rectangle__width}, "
-            f"{self._Rectangle__height})"
-        )
