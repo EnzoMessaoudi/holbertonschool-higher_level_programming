@@ -84,4 +84,7 @@ class Rectangle:
         """
         if self._Rectangle__height == 0 or self._Rectangle__width == 0:
             return ""
-        return "{}, {}".format(self._Rectangle__height, self._Rectangle__width)
+        return (
+            f"Rectangle({self._Rectangle__width}, "
+            f"{self._Rectangle__height})"
+        )
