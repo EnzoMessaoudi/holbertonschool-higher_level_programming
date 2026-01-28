@@ -82,8 +82,6 @@ class Rectangle:
         """
         Print a rectangle with the view of a developper
         """
-        if self._Rectangle__height == 0 or self._Rectangle__width == 0:
-            return ""
         return (
             f"Rectangle({self._Rectangle__width}, "
             f"{self._Rectangle__height})"
