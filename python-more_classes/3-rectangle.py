@@ -71,12 +71,16 @@ class Rectangle:
         """
         Print a rectangle with the view of a users
         """
+        if self._Rectangle__height == 0 or self._Rectangle__width == 0:
+            return ""
         lines = []
         for i in range(self._Rectangle__height):
             lines.append("#" * self._Rectangle__width)
         return "\n".join(lines)
 
     def __repr__(self):
+        if self._Rectangle__height == 0 or self._Rectangle__width == 0:
+            return ""
         """
         Print a rectangle with the view of a developper
         """
