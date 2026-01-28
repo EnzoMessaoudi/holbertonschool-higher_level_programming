@@ -14,4 +14,4 @@ class Square:
         """
         Create the size of a square
         """
-        self._square__size = size
+        self._Square__size = size
