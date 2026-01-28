@@ -7,6 +7,9 @@ This module create a square with a size but check if it's negative or an int
 
 
 class Square:
+    """
+    Create a square and verify its size
+    """
     def __init__(self, size=0):
         """
         Create a square
@@ -16,4 +19,4 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self._square__size = size
+            self._Square__size = size
