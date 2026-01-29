@@ -79,7 +79,7 @@ class Rectangle:
             return ""
         lines = []
         for i in range(self._Rectangle__height):
-            lines.append("#" * self._Rectangle__width)
+            lines.append("{}".format(self.print_symbol) * self._Rectangle__width)
         return "\n".join(lines)
 
     def __repr__(self):
