@@ -2,7 +2,7 @@
 
 
 """
-Modulo that check if an object is a instance of a class
+Modulo that check if an object is a instance of an exact class
 """
 
 
