@@ -11,4 +11,7 @@ class MyList (list):
     MyList inherit from a list and can print a list in order
     """
     def print_sorted(self):
+        """
+        Print a sorted list
+        """
         print(sorted(self))
