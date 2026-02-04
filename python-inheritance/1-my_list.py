@@ -3,6 +3,7 @@
 Module that defines MyList class, which inherits from list
 """
 
+
 class MyList(list):
     """MyList inherits from list and can print a sorted list"""
 
