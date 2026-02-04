@@ -14,6 +14,4 @@ class MyList(list):
         """
         Print a sorted list
         """
-        if self == []:
-            return
         print(sorted(self))
