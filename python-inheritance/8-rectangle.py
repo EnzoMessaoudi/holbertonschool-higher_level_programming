@@ -6,25 +6,7 @@ Modulo that write a class BaseGeometry
 """
 
 
-class BaseGeometry:
-    """
-    Class that define a geometry
-    """
-    def area(self):
-        """
-        For the moment, raise an error if the user want to access
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """
-        Public instance method that validates 'value'
-        Assumes 'name' is always a string
-        """
-        if not isinstance(value, int) or isinstance(value, bool):
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
