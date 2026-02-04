@@ -10,4 +10,4 @@ def inherits_from(obj, a_class):
     """
     check if obj inherited from a_class
     """
-    return type(obj) is not a_class
+    return isinstance(obj, a_class) and type(obj) is not a_class
