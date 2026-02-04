@@ -7,6 +7,12 @@
 
 >>> bg.integer_validator("width", 89)
 
+>>> class MyInt(int):
+...     pass
+
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("subclass_int", MyInt(5))
+
     # Here, we check all the error messages
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
