@@ -24,6 +24,8 @@ class Shape(ABC):
 class Circle(Shape):
 
     def __init__(self, radius):
+        if not isinstance(radius, int) and radius <= 0:
+            raise ValueError("radius must be a positive integrer")
         self.radius = radius
 
     def area(self):
@@ -36,6 +38,10 @@ class Circle(Shape):
 class Rectangle(Shape):
 
     def __init__(self, width, height):
+        if not isinstance(width, int) and width <= 0:
+            raise ValueError("width must be a positive integer")
+        if not isinstance(height, int) and height <= 0:
+            raise ValueError("height must be a positive integer")
         self.width = width
         self.height = height
 
