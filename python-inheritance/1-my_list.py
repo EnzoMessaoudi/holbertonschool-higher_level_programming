@@ -2,16 +2,15 @@
 
 
 """
-Modulo that permit to a class to inherit from another
+Module that defines MyList class which inherits from list
 """
 
+__all__ = ["MyList"]
 
-class MyList (list):
-    """
-    MyList inherit from a list and can print a list in order
-    """
+
+class MyList(list):
+    """MyList class that inherits from list and can print a sorted list"""
+
     def print_sorted(self):
-        """
-        Print a sorted list
-        """
+        """Prints the list in ascending order without modifying it"""
         print(sorted(self))
