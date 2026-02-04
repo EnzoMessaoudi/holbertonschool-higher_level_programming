@@ -2,25 +2,27 @@
 
 
 """
-Modulo that write a class BaseGeometry
+Module that defines a BaseGeometry class
 """
 
 
 class BaseGeometry:
     """
-    Class that define a geometry
+    BaseGeometry class with area and integer validation
     """
+
     def area(self):
         """
-        For the moment, raise an error if the user want to access
+        Public instance method that raises an exception
         """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """
-        Validates 'value'
+        Public instance method that validates 'value'
+        Assumes 'name' is always a string
         """
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError(f"{name} must be an integer")
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError(f"{name} must be greater than 0")
