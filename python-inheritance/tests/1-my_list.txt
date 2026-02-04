@@ -24,3 +24,13 @@
 
 >>> my_list.print_sorted()
 [-5, -1, 0, 2, 3]
+
+>>> my_list = MyList([7, 7, 7, 7])
+
+>>> my_list.print_sorted()
+[7, 7, 7, 7]
+
+>>> my_list = MyList([-2, 0, 3, -1, 5])
+
+>>> my_list.print_sorted()
+[-2, -1, 0, 3, 5]
