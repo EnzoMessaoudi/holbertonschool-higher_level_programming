@@ -15,9 +15,9 @@ What is and how to use the with statement
 What is JSON
     - It's a text format that is used to stock and exchange datas. It's stock like dictionnaries in Python but with just text.
 What is serialization
-    - Convert a Python object in a JSON string. (dict -> text)
+    - Convert a Python object in a JSON string. (dict -> str)
 What is deserialization
-    - Convert a JSON string in a Python object. (text -> dict)
+    - Convert a JSON string in a Python object. (str -> dict)
 How to convert a Python data structure to a JSON string
     - Using `dumps`, we can convert a dictionnaries in Python to a JSON string and import json. 
 How to convert a JSON string to a Python data structure
