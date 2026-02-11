@@ -1,10 +1,18 @@
 #!/usr/bin/python3
-
+"""
+Modulo that serialize and deserialize using pickles
+"""
 import pickle
 
 
 class CustomObject:
+    """
+    python class
+    """
     def __init__(self, name="John", age=25, is_student=True):
+        """
+        Find the attributes of the class
+        """
         if not isinstance(name, str):
             raise TypeError("name must be a string")
         if not isinstance(age, int):
@@ -17,16 +25,25 @@ class CustomObject:
         self.is_student = is_student
 
     def display(self):
+        """
+        Print the attributes of the class
+        """
         print("Name: {}".format(self.name))
         print("Age: {}".format(self.age))
         print("is_student: {}".format(self.is_student))
 
     def serialize(self, filename):
+        """
+        serialize filename
+        """
         with open(filename, "wb") as file:
             pickle.dump(self, file)
 
     @classmethod
     def deserialize(cls, filename):
+        """
+        deserialize filename
+        """
         with open(filename, "rb") as file:
             obj = pickle.load(file)
             if not isinstance(obj, cls):
