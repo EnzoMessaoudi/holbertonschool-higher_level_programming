@@ -22,12 +22,12 @@ class CustomObject:
         print("is_student: {}".format(self.is_student))
 
     def serialize(self, filename):
-        with open(filename, "wb") as file:
+        with open(filename, "wb", encoding='utf-8') as file:
             pickle.dump(self, file)
 
     @classmethod
     def deserialize(cls, filename):
-        with open(filename, "rb") as file:
+        with open(filename, "rb", encoding='utf-8') as file:
             obj = pickle.load(file)
             if not isinstance(obj, cls):
                 raise TypeError("Invalid object type in pickle file")
