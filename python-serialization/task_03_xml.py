@@ -10,7 +10,6 @@ def serialize_to_xml(dictionary, filename):
 
     tree = ET.ElementTree(root)
 
-    # Pretty print (important for some checkers)
     try:
         ET.indent(tree, space="    ")
     except AttributeError:
