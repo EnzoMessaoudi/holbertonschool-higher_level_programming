@@ -44,8 +44,11 @@ class CustomObject:
         """
         deserialize filename
         """
-        with open(filename, "rb") as file:
-            obj = pickle.load(file)
-            if not isinstance(obj, cls):
-                raise TypeError("Invalid object type in pickle file")
-            return obj
+        try:
+            with open(filename, "rb") as file:
+                obj = pickle.load(file)
+                if not isinstance(obj, cls):
+                    raise TypeError("Invalid object type in pickle file")
+                return obj
+        except (FileNotFoundError, pickle.UnpicklingError, EOFError, OSError):
+            return None
