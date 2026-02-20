@@ -7,8 +7,7 @@ import json
 class SimpleHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        try:
-            if self.path == "/" or self.path == "":
+            if self.path == "/":
                 self.send_response(200)
                 self.send_header("Content-Type", "text/plain; charset=utf-8")
                 self.end_headers()
@@ -32,20 +31,18 @@ class SimpleHandler(BaseHTTPRequestHandler):
                 self.send_header("Content-Type", "text/plain; charset=utf-8")
                 self.end_headers()
                 self.wfile.write(b"OK")
-
             else:
                 self.send_response(404)
                 self.send_header("Content-Type", "text/plain; charset=utf-8")
                 self.end_headers()
                 self.wfile.write(b"Endpoint not found")
 
-        except Exception as e:
-            self.send_response(500)
-            self.send_header("Content-Type", "text/plain; charset=utf-8")
-            self.end_headers()
-            self.wfile.write(f"Internal Server Error: {e}".encode("utf-8"))
+def run(server_class=HTTPServer, handler_class=SimpleHandler, port=8000):
+    server_address = ('', port)
+    httpd = server_class(server_address, handler_class)
+    print("Server running on http://localhost:{}".format(port))
+    httpd.serve_forever()
 
-server_address = ("", 8000)
-httpd = HTTPServer(server_address, SimpleHandler)
-print("Server running at http://localhost:8000")
-httpd.serve_forever()
+
+if __name__ == "__main__":
+    run()
