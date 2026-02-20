@@ -6,11 +6,16 @@ import json
 class SimpleHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        if self.path == "/data":
+        if self.path == "/" or self.path == "":
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API!")
+        elif self.path == "/data":
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
-            data = {"name": 'John', "age": 30, "city": "New York"}
+            data = {"name": "John", "age": 30, "city": "New York"}
             self.wfile.write(json.dumps(data).encode("utf-8"))
         elif self.path == "/status":
             self.send_response(200)
