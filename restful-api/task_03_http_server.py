@@ -8,7 +8,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/data":
             self.send_response(200)
-            self.send_header("Content-Type", "application/plain; charset=utf-8")
+            self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
             data = {"name": 'John', "age": 30, "city": "New York"}
             self.wfile.write(json.dumps(data).encode("utf-8"))
@@ -17,6 +17,15 @@ class SimpleHandler(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "text/plain; charset=utf-8")
             self.end_headers()
             self.wfile.write(b"OK")
+        elif self.path == "/info":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.end_headers()
+            data = {
+                "version": "1.0",
+                "description": "A simple API built with http.server"
+            }
+            self.wfile.write(json.dumps(data).encode("utf-8"))
         else:
             self.send_response(404)
             self.send_header("Content-Type", "text/plain; charset=utf-8")
