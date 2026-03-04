@@ -1,6 +1,10 @@
+-- Create a second table
+-- Npthing happen if it already exists
+-- Inside, we put the columns: id, name, score
+-- then, we determine the values
 CREATE TABLE IF NOT EXISTS second_table (
     id INT,
-    name varchar(256),
+    name VARCHAR(256),
     score INT
 );
 INSERT INTO second_table (id, name, score) VALUES (1, 'John', 10);

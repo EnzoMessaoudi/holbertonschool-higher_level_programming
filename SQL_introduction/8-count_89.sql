@@ -1,1 +1,2 @@
-SELECT COUNT(id) from first_table where id = 89;
+-- Count how many times the columns id = 89 appears
+SELECT COUNT(id) FROM first_table WHERE id = 89;
