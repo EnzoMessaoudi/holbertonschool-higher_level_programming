@@ -1,20 +1,21 @@
 #!/usr/bin/node
 
 const args = process.argv.slice(2);
+const nums = args.map(Number);
 
-if (args.length < 2 || args.length === 1) {
+if (nums.length < 2) {
   console.log('0');
 } else {
   let biggest = 0;
   let second = -Infinity;
-  for (let i = 0; i < args.length; i++) {
-    if (args[i] > args[biggest]) {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > nums[biggest]) {
       biggest = i;
     }
   }
-  for (let j = 0; j < args.length; j++) {
-    if (args[j] > second && j !== biggest) {
-      second = args[j];
+  for (let j = 0; j < nums.length; j++) {
+    if (nums[j] > second && j !== biggest) {
+      second = nums[j];
     }
   }
   console.log(`${second}`);
