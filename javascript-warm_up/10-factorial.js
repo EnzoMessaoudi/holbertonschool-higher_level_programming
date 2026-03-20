@@ -10,7 +10,7 @@ function factorial (a) {
 }
 
 if (isNaN(args[0])) {
-  console.log('NaN');
+  console.log('1');
 } else {
   const res = factorial(args[0]);
   console.log(`${res}`);
